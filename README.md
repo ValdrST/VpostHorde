@@ -1,2 +1,1 @@
-# VpostHorde
-Programa que sirve para hacer pruebas de estres 
+# usecad-estres Herramienta para realizar pruebas de funcionamiento y/o estrés de servicios web

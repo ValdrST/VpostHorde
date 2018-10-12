@@ -1,6 +1,6 @@
 import sys
 import time
-from Estres import Estres
+import tools.Estres as Estres
 def evaluarArgumentos(params):
     if "--cli" in sys.argv:
         params = sys.argv
@@ -22,7 +22,7 @@ def evaluarArgumentos(params):
         headers = None
     if "--auth" in params:
         auth = str(params[sys.argv.index("--auth")+1])
-    else:
+    else: 
         auth = None
     if "-X" in params:
         tipo = str(params[sys.argv.index("-X")+1]).upper()
@@ -43,10 +43,5 @@ def evaluarArgumentos(params):
         else:
             archivo = False
     else: archivo = False
-    e = Estres(hilos = hilos,tiempo = tiempo,url = url, payload = payload, tipo = tipo,headers = headers,auth = auth, archivo = archivo, archivoRespuestas=archivoRespuestas)
+    e = Estres.Estres(hilos = hilos,tiempo = tiempo,url = url, payload = payload, tipo = tipo,headers = headers,auth = auth, archivo = archivo, archivoRespuestas=archivoRespuestas)
     return e
-
-if __name__ == "__main__":
-    e = evaluarArgumentos(params=[])
-    e.iniciarHilos()
-    print(e.respuestas)

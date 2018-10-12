@@ -1,11 +1,18 @@
-# usecad-estres Herramienta para realizar pruebas de funcionamiento y/o estrés de servicios web
+# vPostHorde Herramienta para realizar pruebas de funcionamiento y/o estrés de servicios web
+
+## instrucciones modo grafica
+
+
+```
+$ main --cli [comandos]
+```
 
 ## Instrucciones de uso en modo linea de comandos
 
 Para poder ejecutar desde la linea de comandos se ejecuta el binario del ejecutable con la bandera --cli por ejemplo:
 
 ```
-$ vPostHorde --cli [comandos]
+$ main --cli [comandos]
 ```
 
 ### banderas de la linea de comandos

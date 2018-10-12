@@ -4,7 +4,7 @@
 
 
 ```
-$ main --cli [comandos]
+$ main
 ```
 
 ## Instrucciones de uso en modo linea de comandos

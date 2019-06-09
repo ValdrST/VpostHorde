@@ -1,0 +1,3 @@
+import VpostHorde
+
+VpostHorde.main()

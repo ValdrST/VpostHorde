@@ -9,8 +9,6 @@ from setuptools import setup
 with open('README.md', 'r', encoding='utf-8') as f:
     readme = f.read()
 
-requirements = parse_requirements("./requirements.txt", session=False)
-
 setup(name='VpostHorde',
       version="0.9.1",
       description='Web stress test',
@@ -21,7 +19,7 @@ setup(name='VpostHorde',
       url='https://github.com/ValdrST/VpostHorde',
       packages=set(['VpostHorde','VpostHorde.tools']),
       include_package_data=True,
-      install_requires=[str(requirement.req) for requirement in requirements],
+      install_requires=[i.strip() for i in open("./requirements.txt").readlines()],
       entry_points={
           'console_scripts': ['VpostHorde = VpostHorde:main']
       },

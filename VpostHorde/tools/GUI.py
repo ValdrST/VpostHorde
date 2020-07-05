@@ -308,12 +308,12 @@ class GUI(wx.Frame): #Clase de la aplicacion grafica
             grafica.dibujar() 
 
     def espera(self,hilo): #Abre un dialogo que se cerrara cuando se libere el semaforo
-        if hilo.is_alive() == False:
-            with wx.MessageDialog(self,"El test ya termino","Aviso") as finished:
-                val = finished.ShowWindowModal()
-        else:
+        if hilo.is_alive():
             with wx.MessageDialog(self,"El test esta en proceso","Aviso") as espera:
                 val = espera.ShowWindowModal()
+        else:
+            with wx.MessageDialog(self,"El test ya termino","Aviso") as finished:
+                val = finished.ShowWindowModal()
 
     def usarTiempo(self, event):
         self.timeChecked = self.chkBxTiempo.IsChecked()

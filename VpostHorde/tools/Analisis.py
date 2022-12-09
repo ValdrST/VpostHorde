@@ -1,7 +1,4 @@
-import sys
-import ast
-import wx
-from wx.lib.plot import PlotCanvas, PlotGraphics, PolyLine, PolyMarker
+from  wx.lib.plot import PlotGraphics, PolyLine
 import numpy as np
 import math
 

@@ -3,7 +3,7 @@ from .Analisis import Analisis
 from operator import itemgetter
 import threading
 import time
-import json
+import pandas as pd
 
 class Singleton(type): #Evita que en algun caso extremo exista otra instancia de la clase en ejecucion
     def __init__(cls, name, bases, dct):
@@ -34,6 +34,9 @@ class Estres(Peticion):
 
     def crearAnalisis(self): # Este metodo retorna el analisis final de las respuestas del servidor
         analizador = Analisis() 
+        respuestas_df = pd.DataFrame()
+        respuestas_df = pd.DataFrame.from_dict(sorted(self.respuestas, key=itemgetter('timeDate'), reverse=True))
+        respuestas_df.to_csv(self.archivoRespuestas+'.csv',index=False)
         respuestas = sorted(self.respuestas, key=itemgetter('timeDate'), reverse=True)
         self.respuestas = []
         for respuesta in respuestas:
